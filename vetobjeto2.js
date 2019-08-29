@@ -12,11 +12,22 @@ function vetobjeto2() {
     }
     var soma = 0
     var sFilhos = 0
+    var maiorSalario = vet[0].salario
+    var qtde = 0
     for (var i=0;i<3;i++){
         soma = soma + (vet[i].salario)
-        sFilhos = sFilhos + (vet[i].filhos) 
+        sFilhos = sFilhos + (vet[i].filhos)
+        if (vet[i].salario > maiorSalario){
+            maiorSalario = vet[i].salario
+        }
+        if ((vet[i].sexo == 'F') && (vet[i].salario > 1000)){
+            qtde++;
+        }  
     }
-    alert (soma/3)
-    alert (sFilhos/3)
+
+    alert ("Média salarial" + soma/3)
+    alert ("Média de filhos" + sFilhos/3)
+    alert ("Maior Salário" + maiorSalario)
+    alert ("Percentual" + qtde/3*100);
 }
     
